@@ -10,3 +10,22 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 
 #思路：
+class Solution(object):
+    def addTwoNumbers(l1, l2):
+        sum1=0
+        sum2=0
+        for index, value in enumerate(l1):
+            a = value * 10**(index)
+            sum1= a + sum1
+            #print 'sum1',sum1
+        for index, value in enumerate(l2):
+            b = value * 10 ** (index)
+            sum2 = b + sum2
+            #print 'sum2',sum2
+        c = str(sum1+sum2)
+        #print int(c[::-1])
+        print list(map(int,c[::-1]))#将字符串转为整数类型的列表
+
+    l1 = [2, 4, 3]
+    l2 = [5, 6, 4]
+    addTwoNumbers(l1,l2)
